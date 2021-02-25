@@ -1,0 +1,17 @@
+package timers;
+
+public class Timer implements Timers {
+
+	@Override
+	public void startTimer() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void endTimer() {
+		// TODO Auto-generated method stub
+
+	}
+
+}
