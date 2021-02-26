@@ -3,7 +3,7 @@ package calculators;
 import timers.Timer;
 
 /**
- * Calculator used to compute a Fibonacci sequence a number of times determined by the user in an iterative fashion.
+ * Calculator used to compute a Fibonacci sequence a number of times determined by the user.
  * @author Andrew McKay
  *
  */
@@ -15,14 +15,13 @@ public class FibonacciCalculator implements Calculators
 	
 	/**
 	 * Create a new FibonacciCalculator to execute the sequence a number of times equal to fValue.
-	 * The result of the sequence will be zero until the calculate() method is ran.
 	 * @param fValue long integer that determines the number of times the Fibonacci sequence is executed.
 	 */
 	public FibonacciCalculator(long fValue)
 	{
 		setFValue(fValue);
+		setFResult();
 		setCalculationTimer(new Timer());
-		setFResult(0);
 	}
 	
 	/**
@@ -95,10 +94,6 @@ public class FibonacciCalculator implements Calculators
 		calculationTimer.endTimer();
 	}
 	
-	/**
-	 * Run the Fibonacci sequence a number of times equal to fValue and return the result.
-	 * @return long integer representing the results of the Fibonacci sequence for fValue.
-	 */
 	private long calculateFibonacciSequence()
 	{
 		long prevNumber = 0;

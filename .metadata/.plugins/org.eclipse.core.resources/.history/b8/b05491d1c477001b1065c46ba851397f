@@ -1,0 +1,16 @@
+package calculators;
+
+public class RecursiveFibonacciCalculator extends FibonacciCalculator implements Calculators 
+{
+	public RecursiveFibonacciCalculator(long fValue) 
+	{
+		super(fValue);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void calculate() 
+	{
+		
+	}
+}

@@ -3,26 +3,23 @@ package calculators;
 import timers.Timer;
 
 /**
- * Calculator used to compute a Fibonacci sequence a number of times determined by the user in an iterative fashion.
+ * Calculator used to compute a Fibonacci sequence a number of times determined by the user.
  * @author Andrew McKay
  *
  */
 public class FibonacciCalculator implements Calculators 
 {
-	private long fValue = 0;
-	private long fResult = 0;
+	private long fValue;
 	private Timer calculationTimer;
 	
 	/**
 	 * Create a new FibonacciCalculator to execute the sequence a number of times equal to fValue.
-	 * The result of the sequence will be zero until the calculate() method is ran.
 	 * @param fValue long integer that determines the number of times the Fibonacci sequence is executed.
 	 */
 	public FibonacciCalculator(long fValue)
 	{
 		setFValue(fValue);
 		setCalculationTimer(new Timer());
-		setFResult(0);
 	}
 	
 	/**
@@ -42,29 +39,6 @@ public class FibonacciCalculator implements Calculators
 		this.fValue = fValue;
 	}
 	
-	/**
-	 * Retrieve the results of the Fibonacci calculation
-	 * @return FibonacciCalculator.fResult
-	 */
-	public long getFResult()
-	{
-		return fResult;
-	}
-	/**
-	 * Sets fResult to the calculated Fibonacci value determined by fValue.
-	 */
-	public void setFResult()
-	{
-		this.fResult = calculateFibonacciSequence();
-	}
-	/**
-	 * Assigns a value for a Fibonacci calculation
-	 * @param fResult long integer representing the calculated results of the Fibonacci sequence
-	 */
-	public void setFResult(long fResult)
-	{
-		this.fResult = fResult;
-	}
 	
 	/**
 	 * Retrieves the Timer object for this FibonacciCalculator
@@ -89,29 +63,19 @@ public class FibonacciCalculator implements Calculators
 		//Start the timer
 		calculationTimer.startTimer();
 		
-		setFResult();
+		
 		
 		//End the timer
 		calculationTimer.endTimer();
 	}
 	
-	/**
-	 * Run the Fibonacci sequence a number of times equal to fValue and return the result.
-	 * @return long integer representing the results of the Fibonacci sequence for fValue.
-	 */
-	private long calculateFibonacciSequence()
+	public long calculateFibonacciSequence(long fValue)
 	{
 		long prevNumber = 0;
 		long fResult = 0;
-		
-		//Exit the sequence with a result of zero if the fValue given is zero
-		if(fValue == 0)
-			return fResult = 0;
-		//Execute the Fibonacci sequence if the fValue is not zero
-		for(long x = 1; x <= fValue; x++)
+		for(long x = 0; x <= fValue; x++)
 		{
 			fResult += prevNumber;
-			prevNumber = fResult;
 		}
 		
 		return fResult;
