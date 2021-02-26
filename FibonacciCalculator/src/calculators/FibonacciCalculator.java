@@ -105,13 +105,14 @@ public class FibonacciCalculator implements Calculators
 		long fResult = 1;
 		
 		//Exit the sequence with a result of zero if the fValue given is zero
-		if(fValue == 0)
-			return fResult = 0;
+		if(fValue == 0 || fValue == 1)
+			return fValue;
 		//Execute the Fibonacci sequence if the fValue is not zero
-		for(long x = 1; x <= fValue; x++)
+		for(long i = 1; i < fValue; i++)
 		{
-			fResult += prevNumber;
+			long temp = prevNumber;
 			prevNumber = fResult;
+			fResult += temp;
 		}
 		
 		return fResult;

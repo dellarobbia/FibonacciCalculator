@@ -7,9 +7,6 @@ package calculators;
  */
 public class RecursiveFibonacciCalculator extends FibonacciCalculator implements Calculators 
 {
-	private long sequenceNumber = 0;
-	private long prevNumber = 1;
-	
 	/**
 	 * Create a new FibonacciCalculator to execute the sequence a number of times equal to fValue.
 	 * The result of the sequence will be zero until the calculate() method is ran.
@@ -18,42 +15,6 @@ public class RecursiveFibonacciCalculator extends FibonacciCalculator implements
 	public RecursiveFibonacciCalculator(long fValue) 
 	{
 		super(fValue);
-		setSequenceNumber(0);
-		setPrevNumber(1);
-	}
-	
-	/**
-	 * Retrieves the current step the Fibonacci calculation is on
-	 * @return RecursiveFibonacciCalculator.sequenceNumber
-	 */
-	public long getSequenceNumber()
-	{
-		return sequenceNumber;
-	}
-	/**
-	 * Set the current sequence number for the Fibonacci sequence calculation.
-	 * @param sequenceNumber long integer representing the current calculation step number.
-	 */
-	public void setSequenceNumber(long sequenceNumber)
-	{
-		this.sequenceNumber = sequenceNumber;
-	}
-	
-	/**
-	 * Retrieves the previous number that was used in the Fibonacci sequence calculation.
-	 * @return RecursiveFibonacciCalculator.prevNumber
-	 */
-	public long getPrevNumber()
-	{
-		return prevNumber;
-	}
-	/**
-	 * Set the previous number that was used in the Fibonacci sequence calculation.
-	 * @param prevNumber long integer representing the resulting value from the previous step in the Fibonacci sequence.
-	 */
-	public void setPrevNumber(long prevNumber)
-	{
-		this.prevNumber = prevNumber;
 	}
 	
 	@Override
@@ -61,29 +22,21 @@ public class RecursiveFibonacciCalculator extends FibonacciCalculator implements
 	{
 		getCalculationTimer().startTimer();
 		
-		setFResult(calculateFibonacciSequence());
+		setFResult(calculateFibonacciSequence(getFValue()));
 		
 		getCalculationTimer().endTimer();
 	}
 	
 	/**
 	 * Run the Fibonacci sequence a number of times equal to fValue and return the result in a recursive fashion.
+	 * @param fValue long integer representing the number of times the sequence is to be ran
 	 * @return long integer representing the results of the Fibonacci sequence for fValue.
 	 */
-	private long calculateFibonacciSequence()
+	private long calculateFibonacciSequence(long fValue)
 	{
-		long fResult = 0;
-		
-		if(getFValue() == 0)
-			return 0;
-		else if(sequenceNumber > getFValue())
-		{
-			setFResult(getFResult() + prevNumber);
-			prevNumber = getFResult();
-			sequenceNumber++;
-			setFResult(calculateFibonacciSequence());
-		}
-		
-		return fResult;
+		if(fValue == 0 || fValue == 1)
+			return fValue;
+		else
+			return calculateFibonacciSequence(fValue - 1) + calculateFibonacciSequence(fValue - 2);
 	}
 }
