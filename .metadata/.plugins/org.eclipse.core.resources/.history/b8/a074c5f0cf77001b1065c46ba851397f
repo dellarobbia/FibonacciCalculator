@@ -103,7 +103,6 @@ public class Timer implements Timers
 	public void endTimer() 
 	{
 		setEndTime();
-		setResultTime();
 	}
 
 }

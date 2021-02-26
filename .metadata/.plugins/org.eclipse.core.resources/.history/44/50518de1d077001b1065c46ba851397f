@@ -101,8 +101,8 @@ public class FibonacciCalculator implements Calculators
 	 */
 	private long calculateFibonacciSequence()
 	{
-		long prevNumber = 0;
-		long fResult = 1;
+		long prevNumber = 1;
+		long fResult = 0;
 		
 		//Exit the sequence with a result of zero if the fValue given is zero
 		if(fValue == 0)
