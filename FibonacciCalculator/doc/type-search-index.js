@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"calculators","l":"Calculators"},{"p":"calculators","l":"FibonacciCalculator"},{"p":"calculators","l":"RecursiveFibonacciCalculator"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"calculators","l":"Calculators"},{"p":"calculators","l":"FibonacciCalculator"},{"p":"main","l":"Main"},{"p":"calculators","l":"RecursiveFibonacciCalculator"},{"p":"timers","l":"Timer"},{"p":"timers","l":"Timers"}]
